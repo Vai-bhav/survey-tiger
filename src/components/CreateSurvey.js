@@ -2,7 +2,7 @@ import Question from "./Question"
 import TypeSelector from "./TypeSelector"
 import Options from "./Options"
 import { useState } from "react"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 
 const CreateSurvey = ({ squestions,setSquestions }) => {
 
@@ -25,7 +25,7 @@ const CreateSurvey = ({ squestions,setSquestions }) => {
   }
 
   const deleteOptions = () => {
-    if(options.length == 2){
+    if(options.length === 2){
       alert("Error: A select type question should have atleast 2 options");
     }else{
       let updatedOptions=[...options];
@@ -56,7 +56,7 @@ const CreateSurvey = ({ squestions,setSquestions }) => {
 
   const publishQuestions = () => {
     let newQuestion={};
-    if(qType == 2){
+    if(qType === 2){
       newQuestion = {
         qid: getRandom(),
         text: qText,
@@ -81,7 +81,7 @@ const CreateSurvey = ({ squestions,setSquestions }) => {
       {qType !== 0 ?
       <> 
         <Question setQtext={setQtext} />
-        {qType == 1 ? 
+        {qType === 1 ? 
           <>
             {options.map((opt,key) => (
               <Options 
